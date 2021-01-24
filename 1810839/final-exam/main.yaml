@@ -1,0 +1,30 @@
+---
+- name: Installing packages in ubuntu
+  hosts: ubuntu
+  vars_files:
+    - ./config.yaml
+  roles:
+    - ubuntu_es
+    - ubuntu_git
+    - ubuntu_mt
+    - ubuntu_motd
+
+- name: Installing packages in centos
+  hosts: centos
+  vars_files:
+    - ./config.yaml
+  roles:
+    - centos_es
+    - centos_git
+    - centos_mt
+    - centos_motd
+
+- name: Installing packages in opensuse
+  hosts: opensuse
+  vars_files:
+    - ./config.yaml
+  roles:
+    - opensuse_es
+    - opemsuse_git
+    - opensuse_mt
+    - opensuse_motd

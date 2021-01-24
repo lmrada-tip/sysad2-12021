@@ -1,0 +1,22 @@
+---
+# tasks file for roles/opensuse_git
+
+- name: creating directory
+  file:
+    path: /home/lmrada-tip/repo
+    state: directory
+    mode: '777'
+
+- name: installing git
+  zypper:
+    name: git
+    state: latest
+    update_cache: yes
+
+- name: clone prelin repo
+  git:
+    repo: 'https://github.com/lmrada-tip/sysad2-12021'
+    dest: /home/lmrada-tip/repo
+    version: prelim-exam
+    clone: yes
+    update: yes

@@ -1,0 +1,16 @@
+---
+# tasks file for roles/ubuntu_git
+
+- name: creating directory
+  file:
+    path: /home/lmrada-tip
+    state: directory
+    mode: '777'
+
+- name: clone prelim repo
+  git:
+    repo: 'https://github.com/lmrada-tip/sysad2-12021.git'
+    dest: /home/lmrada-tip/repo
+    version: prelim-exam
+    clone: yes
+    update: yes
